@@ -35,7 +35,7 @@ async function loadDb(): Promise<DatabaseState> {
     // Keep the main admin's email in sync with the ADMIN_EMAIL secret.
     const want = String((cfEnv as unknown as Record<string, string | undefined>).ADMIN_EMAIL || '').trim().toLowerCase();
     if (want && !state.users.some((u) => u.email.toLowerCase() === want)) {
-      const admin = state.users.find((u) => u.role === 'admin');
+      const admin = state.users.find((u) => u.role === 'super_admin');
       if (admin) {
         admin.email = want;
         await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(state)).run();
