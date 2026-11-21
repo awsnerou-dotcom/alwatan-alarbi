@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "al-watan-alarabi",
+  "name": "alwatan-alarbi",
   "main": "worker.ts",
   "build": { "command": "npm run build" },
   "compatibility_date": "2025-10-01",
