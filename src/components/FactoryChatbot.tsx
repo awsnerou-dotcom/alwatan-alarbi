@@ -127,25 +127,6 @@ export function FactoryChatbot() {
     pick('Hello Al Watan Al Arabi Factory', 'مرحباً مصنع الوطن العربي'),
   )}`;
 
-  const quickPrompts = [
-    pick(
-      'What are the factory manufacturing divisions?',
-      'ما هي أقسام التصنيع والتجهيز في المصنع؟',
-    ),
-    pick(
-      'Tell me about caravan and GMC conversions',
-      'ما أبرز تجهيزات الكرفانات والجموس والمجالس؟',
-    ),
-    pick(
-      'Tell me about Katara & Suhail exhibitions',
-      'حدثني عن مشاركات معارض كتارا وسهيل والزيارات',
-    ),
-    pick(
-      'Where is the factory located & working hours?',
-      'أين موقع المصنع وما هي ساعات العمل والتواصل؟',
-    ),
-  ];
-
   useEffect(() => {
     if (open) {
       bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -153,11 +134,11 @@ export function FactoryChatbot() {
   }, [messages, sending, open]);
 
   useEffect(() => {
-    if (open) {
+    if (open && !sending) {
       const timer = setTimeout(() => inputRef.current?.focus(), 120);
       return () => clearTimeout(timer);
     }
-  }, [open]);
+  }, [open, sending]);
 
   const sendMessage = async (textToSend?: string) => {
     const cleanText = (textToSend ?? input).trim();
@@ -313,22 +294,6 @@ export function FactoryChatbot() {
               'اسألني عن أي تفاصيل تخص أقسام التصنيع والتجهيز، النماذج والمشاريع المنشورة، معارض كتارا وسهيل، خيارات الطلب المخصص، أو موقع المصنع وساعات العمل.',
             )}
           </p>
-
-          {messages.length === 0 ? (
-            <div className="mt-3 grid grid-cols-1 gap-1.5">
-              {quickPrompts.map((prompt) => (
-                <button
-                  key={prompt}
-                  type="button"
-                  onClick={() => sendMessage(prompt)}
-                  disabled={sending}
-                  className="rounded-[4px] border border-zinc-800 bg-[#0B0B0E] px-3 py-2 text-start text-xs font-medium text-zinc-200 transition-colors hover:border-[#B5945B]/60 hover:text-[#EAD4A5] disabled:opacity-50 cursor-pointer"
-                >
-                  {prompt}
-                </button>
-              ))}
-            </div>
-          ) : null}
         </div>
 
         {messages.map((msg) => (
@@ -354,13 +319,16 @@ export function FactoryChatbot() {
 
         {sending ? (
           <div className="flex items-start">
-            <div className="inline-flex items-center gap-2 rounded-[5px] border border-zinc-800 bg-[#141418] px-3.5 py-2.5 text-xs text-zinc-300">
-              <span className="flex items-center gap-1">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#EAD4A5]" />
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#B5945B] [animation-delay:150ms]" />
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#8A6D3B] [animation-delay:300ms]" />
+            <div
+              role="status"
+              aria-label={pick('Typing', 'جاري الكتابة')}
+              className="inline-flex items-center rounded-[5px] border border-zinc-800 bg-[#141418] px-4 py-3"
+            >
+              <span className="flex items-center gap-1.5">
+                <span className="h-2 w-2 animate-bounce rounded-full bg-[#EAD4A5]" />
+                <span className="h-2 w-2 animate-bounce rounded-full bg-[#B5945B] [animation-delay:150ms]" />
+                <span className="h-2 w-2 animate-bounce rounded-full bg-[#8A6D3B] [animation-delay:300ms]" />
               </span>
-              <span>{pick('Preparing your reply...', 'جاري تجهيز الرد...')}</span>
             </div>
           </div>
         ) : null}
@@ -436,6 +404,10 @@ export function FactoryChatbot() {
           <Send size={15} />
         </button>
       </form>
+
+      <div className="shrink-0 border-t border-zinc-900 bg-[#09090B] pb-2 pt-1 text-center text-[10px] tracking-wide text-zinc-500">
+        <span dir="ltr">Powered by Nerou Technology Services</span>
+      </div>
     </section>
   );
 }
