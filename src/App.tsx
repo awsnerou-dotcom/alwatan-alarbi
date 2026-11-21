@@ -72,11 +72,16 @@ function ScrollToTop() {
     if (hash) {
       const el = document.getElementById(decodeURIComponent(hash.slice(1)));
       if (el) {
-        el.scrollIntoView();
+        el.scrollIntoView({ behavior: 'auto' });
         return;
       }
     }
+    // The site uses CSS smooth scrolling; jump instantly so the new page opens at the top.
+    const root = document.documentElement;
+    const prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
     window.scrollTo(0, 0);
+    root.style.scrollBehavior = prev;
   }, [pathname, hash]);
   return null;
 }
