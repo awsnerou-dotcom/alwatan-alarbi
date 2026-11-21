@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import { I18nProvider } from './context/I18nContext';
 import { AuthProvider } from './context/AuthContext';
 import { SiteProvider } from './context/SiteContext';
@@ -65,12 +65,29 @@ function NotFoundPage() {
   );
 }
 
+// Always start a newly opened page from the top (unless the link targets a #section).
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  React.useLayoutEffect(() => {
+    if (hash) {
+      const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (el) {
+        el.scrollIntoView();
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+}
+
 export default function App() {
   return (
     <I18nProvider>
       <AuthProvider>
         <SiteProvider>
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
               <Route element={<PublicShell />}>
                 <Route path="/" element={<HomePage />} />
