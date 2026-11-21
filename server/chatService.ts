@@ -188,19 +188,19 @@ export async function generateFactoryChatReply(
       parts: [{ text: m.text.trim() }],
     }));
 
-  const maxAttempts = 2;
+  // Try several models in order: if one is overloaded (503/429) or missing (404), fall back to the next.
+  const models = ['gemini-4-hydrogen', 'gemini-flash-latest', 'gemini-2.5-flash'];
   let lastError: unknown;
 
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+  for (let i = 0; i < models.length; i++) {
+    const model = models[i];
     try {
       const chat = ai.chats.create({
-        model: 'gemini-4-hydrogen',
+        model,
         history: sanitizedHistory,
         config: {
           systemInstruction,
-          thinkingConfig: {
-            thinkingLevel: ThinkingLevel.LOW,
-          },
+          ...(model.startsWith('gemini-4') ? { thinkingConfig: { thinkingLevel: ThinkingLevel.LOW } } : {}),
         },
       });
 
@@ -215,18 +215,15 @@ export async function generateFactoryChatReply(
       return replyText;
     } catch (err) {
       lastError = err;
+      console.error(`Gemini chat failed on ${model}:`, err instanceof Error ? err.message.slice(0, 300) : String(err));
       const { status } = extractGeminiError(err);
-      if (status === 403 || status === 400 || attempt === maxAttempts) {
-        break;
-      }
-      await new Promise((resolve) => setTimeout(resolve, 450 * attempt));
+      // A bad/forbidden key will fail on every model, so stop early.
+      if (status === 403) break;
     }
   }
 
   const mapped = extractGeminiError(lastError);
-  console.error('Gemini chat failed:', lastError instanceof Error ? lastError.message : String(lastError));
-  const rawDetail = (lastError instanceof Error ? lastError.message : String(lastError)).replace(/AIza[0-9A-Za-z_-]+/g, '[key]').slice(0, 300); // TEMP-DEBUG
-  const finalError = new Error(`${mapped.message} [${rawDetail}]`) as Error & { statusCode?: number }; // TEMP-DEBUG
+  const finalError = new Error(mapped.message) as Error & { statusCode?: number };
   finalError.statusCode = mapped.status;
   throw finalError;
 }
