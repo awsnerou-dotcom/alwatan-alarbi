@@ -31,7 +31,7 @@ function buildPlatformKnowledgeBase(db: DatabaseState): string {
   lines.push(`العنوان الكامل: ${settings.contact.addressAr} (${settings.contact.addressEn})`);
   lines.push(`ساعات العمل: الفترة الصباحية ${settings.about.morningHours} | الفترة المسائية ${settings.about.eveningHours}`);
   lines.push(
-    `التواصل: هاتف 1: ${settings.contact.phone} | هاتف 2: ${settings.contact.phone2} | واتساب: +${settings.contact.whatsapp} | البريد: ${settings.contact.email}`,
+    `التواصل: هاتف: ${[settings.contact.phone, settings.contact.phone2].filter(Boolean).join(' / ')} | واتساب: +${settings.contact.whatsapp}${settings.contact.email ? ` | البريد: ${settings.contact.email}` : ''}`,
   );
   lines.push('');
 

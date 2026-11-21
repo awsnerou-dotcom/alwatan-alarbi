@@ -200,15 +200,17 @@ export function ContactPage() {
                   <div className="py-3">
                     <div className="text-xs text-zinc-500">{pick('Direct Phones', 'أرقام التواصل')}</div>
                     <div dir="ltr" className="font-mono-tabular mt-1 inline-block font-medium text-[#09090B]">
-                      {settings.contact.phone} · {settings.contact.phone2}
+                      {[settings.contact.phone, settings.contact.phone2].filter(Boolean).join(' · ')}
                     </div>
                   </div>
-                  <div className="py-3">
-                    <div className="text-xs text-zinc-500">{pick('Emails', 'البريد الإلكتروني')}</div>
-                    <div dir="ltr" className="mt-1 inline-block font-medium text-[#09090B]">
-                      {settings.contact.email} · {settings.contact.email2}
+                  {settings.contact.email || settings.contact.email2 ? (
+                    <div className="py-3">
+                      <div className="text-xs text-zinc-500">{pick('Emails', 'البريد الإلكتروني')}</div>
+                      <div dir="ltr" className="mt-1 inline-block font-medium text-[#09090B]">
+                        {[settings.contact.email, settings.contact.email2].filter(Boolean).join(' · ')}
+                      </div>
                     </div>
-                  </div>
+                  ) : null}
                   <div className="py-3">
                     <div className="text-xs text-zinc-500">{pick('Factory Hours', 'أوقات الدوام')}</div>
                     <div className="mt-1 text-zinc-700">{settings.about.morningHours}</div>

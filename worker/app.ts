@@ -43,8 +43,12 @@ async function loadDb(): Promise<DatabaseState> {
     }
     // One-time fix: replace the placeholder WhatsApp number with the real one.
     const contact = (state as any).settings?.contact;
-    if (contact && contact.whatsapp === '97455123456') {
+    if (contact && (contact.whatsapp === '97455123456' || contact.phone === '+974 55 123 456')) {
       contact.whatsapp = '97455598944';
+      contact.phone = '+974 5559 8944';
+      contact.phone2 = '';
+      contact.email = '';
+      contact.email2 = '';
       await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(state)).run();
     }
     return state;

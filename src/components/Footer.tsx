@@ -77,13 +77,15 @@ export function Footer() {
               <div className="flex items-center gap-2.5">
                 <Phone size={15} className="shrink-0 text-[#B5945B]" />
                 <span dir="ltr" className="font-mono-tabular text-zinc-200">
-                  {settings?.contact.phone || '+974 55 123 456'}
+                  {settings?.contact.phone || '+974 5559 8944'}
                 </span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Mail size={15} className="shrink-0 text-[#B5945B]" />
-                <span dir="ltr" className="text-zinc-200">{settings?.contact.email || 'info@alwatan.qa'}</span>
-              </div>
+              {settings?.contact.email ? (
+                <div className="flex items-center gap-2.5">
+                  <Mail size={15} className="shrink-0 text-[#B5945B]" />
+                  <span dir="ltr" className="text-zinc-200">{settings.contact.email}</span>
+                </div>
+              ) : null}
               <div className="flex items-start gap-2.5">
                 <MapPin size={15} className="mt-1 shrink-0 text-[#B5945B]" />
                 <span>
