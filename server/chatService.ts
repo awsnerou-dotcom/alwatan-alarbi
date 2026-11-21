@@ -188,44 +188,51 @@ export async function generateFactoryChatReply(
       parts: [{ text: m.text.trim() }],
     }));
 
-  // Try several models in order: if one is overloaded (503/429) or missing (404), fall back to the next.
-  const models = ['gemini-4-hydrogen', 'gemini-flash-latest', 'gemini-2.5-flash'];
+  // Try several models in order: if one is overloaded (503), out of quota (429) or retired (404), use the next.
+  const models = ['gemini-4-hydrogen', 'gemini-3.8-flash', 'gemini-flash-latest'];
   let lastError: unknown;
-  const trace: string[] = []; // TEMP-DEBUG
 
-  for (let i = 0; i < models.length; i++) {
-    const model = models[i];
-    try {
-      const chat = ai.chats.create({
-        model,
-        history: sanitizedHistory,
-        config: {
-          systemInstruction,
-          ...(model.startsWith('gemini-4') ? { thinkingConfig: { thinkingLevel: ThinkingLevel.LOW } } : {}),
-        },
-      });
+  for (const model of models) {
+    // A short second try helps with momentary "high demand" (503) spikes.
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const chat = ai.chats.create({
+          model,
+          history: sanitizedHistory,
+          config: {
+            systemInstruction,
+            ...(/^gemini-[34]\./.test(model) || model.startsWith('gemini-4-')
+              ? { thinkingConfig: { thinkingLevel: ThinkingLevel.LOW } }
+              : {}),
+          },
+        });
 
-      const response = await chat.sendMessage({
-        message: userMessage.trim(),
-      });
+        const response = await chat.sendMessage({
+          message: userMessage.trim(),
+        });
 
-      const replyText = response.text?.trim();
-      if (!replyText) {
-        throw new Error('Empty response received from model');
+        const replyText = response.text?.trim();
+        if (!replyText) {
+          throw new Error('Empty response received from model');
+        }
+        return replyText;
+      } catch (err) {
+        lastError = err;
+        console.error(`Gemini chat failed on ${model} (try ${attempt}):`, err instanceof Error ? err.message.slice(0, 300) : String(err));
+        const { status } = extractGeminiError(err);
+        // A bad/forbidden key fails on every model, so stop right away.
+        if (status === 403) {
+          throw Object.assign(new Error(extractGeminiError(err).message), { statusCode: 403 });
+        }
+        const is503 = /\b503\b|UNAVAILABLE/.test(err instanceof Error ? err.message : '');
+        if (!is503) break; // 429 / 404 / other: go to the next model
+        await new Promise((resolve) => setTimeout(resolve, 600));
       }
-      return replyText;
-    } catch (err) {
-      lastError = err;
-      trace.push(`${model}: ${(err instanceof Error ? err.message : String(err)).replace(/AIza[0-9A-Za-z_-]+/g, '[key]').replace(/\s+/g, ' ').slice(0, 160)}`); // TEMP-DEBUG
-      console.error(`Gemini chat failed on ${model}:`, err instanceof Error ? err.message.slice(0, 300) : String(err));
-      const { status } = extractGeminiError(err);
-      // A bad/forbidden key will fail on every model, so stop early.
-      if (status === 403) break;
     }
   }
 
   const mapped = extractGeminiError(lastError);
-  const finalError = new Error(`${mapped.message} [${trace.join(' || ')}]`) as Error & { statusCode?: number };
+  const finalError = new Error(mapped.message) as Error & { statusCode?: number };
   finalError.statusCode = mapped.status;
   throw finalError;
 }
