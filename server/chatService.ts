@@ -191,6 +191,7 @@ export async function generateFactoryChatReply(
   // Try several models in order: if one is overloaded (503/429) or missing (404), fall back to the next.
   const models = ['gemini-4-hydrogen', 'gemini-flash-latest', 'gemini-2.5-flash'];
   let lastError: unknown;
+  const trace: string[] = []; // TEMP-DEBUG
 
   for (let i = 0; i < models.length; i++) {
     const model = models[i];
@@ -215,6 +216,7 @@ export async function generateFactoryChatReply(
       return replyText;
     } catch (err) {
       lastError = err;
+      trace.push(`${model}: ${(err instanceof Error ? err.message : String(err)).replace(/AIza[0-9A-Za-z_-]+/g, '[key]').replace(/\s+/g, ' ').slice(0, 160)}`); // TEMP-DEBUG
       console.error(`Gemini chat failed on ${model}:`, err instanceof Error ? err.message.slice(0, 300) : String(err));
       const { status } = extractGeminiError(err);
       // A bad/forbidden key will fail on every model, so stop early.
@@ -223,7 +225,7 @@ export async function generateFactoryChatReply(
   }
 
   const mapped = extractGeminiError(lastError);
-  const finalError = new Error(mapped.message) as Error & { statusCode?: number };
+  const finalError = new Error(`${mapped.message} [${trace.join(' || ')}]`) as Error & { statusCode?: number };
   finalError.statusCode = mapped.status;
   throw finalError;
 }
