@@ -30,7 +30,19 @@ async function loadDb(): Promise<DatabaseState> {
   const { DB } = bindings();
   await DB.exec('CREATE TABLE IF NOT EXISTS app_state (k TEXT PRIMARY KEY, v TEXT NOT NULL)');
   const row = await DB.prepare('SELECT v FROM app_state WHERE k = ?').bind('db').first<{ v: string }>();
-  if (row?.v) return JSON.parse(row.v) as DatabaseState;
+  if (row?.v) {
+    const state = JSON.parse(row.v) as DatabaseState;
+    // Keep the main admin's email in sync with the ADMIN_EMAIL secret.
+    const want = String((cfEnv as unknown as Record<string, string | undefined>).ADMIN_EMAIL || '').trim().toLowerCase();
+    if (want && !state.users.some((u) => u.email.toLowerCase() === want)) {
+      const admin = state.users.find((u) => u.role === 'admin');
+      if (admin) {
+        admin.email = want;
+        await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(state)).run();
+      }
+    }
+    return state;
+  }
   const initial = seedDb as unknown as DatabaseState;
   await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(initial)).run();
   return JSON.parse(JSON.stringify(initial)) as DatabaseState;
