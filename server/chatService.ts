@@ -189,7 +189,7 @@ export async function generateFactoryChatReply(
     }));
 
   // Try several models in order: if one is overloaded (503), out of quota (429) or retired (404), use the next.
-  const models = ['gemini-4-hydrogen', 'gemini-3.8-flash', 'gemini-flash-latest'];
+  const models = ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-4-hydrogen'];
   let lastError: unknown;
 
   for (const model of models) {
@@ -207,9 +207,11 @@ export async function generateFactoryChatReply(
           },
         });
 
-        const response = await chat.sendMessage({
-          message: userMessage.trim(),
-        });
+        // Never wait on one model for more than 15 s.
+        const response = await Promise.race([
+          chat.sendMessage({ message: userMessage.trim() }),
+          new Promise<never>((_, reject) => setTimeout(() => reject(new Error('503 UNAVAILABLE: model timed out')), 15000)),
+        ]);
 
         const replyText = response.text?.trim();
         if (!replyText) {
