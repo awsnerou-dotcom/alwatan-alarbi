@@ -1,0 +1,1978 @@
+{
+  "users": [
+    {
+      "id": "usr-admin-1",
+      "name": "Al Watan Super Admin",
+      "nameAr": "مدير النظام - مصنع الوطن العربي",
+      "email": "admin@alwatan.qa",
+      "role": "super_admin",
+      "status": "active",
+      "createdAt": "2025-01-10T09:00:00.000Z",
+      "passwordHash": "9f61f22dc0a250b6992cb594ea2bab10b18dc376587682296af819142f640363c71000b6cd795bce8652a532b339cdd574808a0babeff18cf806e3edc27c0899",
+      "salt": "a8e8f81f7efd171bc9aedd93b2a99644"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-1",
+      "slug": "alfan-vehicle-conversions",
+      "nameEn": "Alfan Vehicle Conversions",
+      "nameAr": "أعمال ألفان",
+      "descriptionEn": "Specialized bus and van conversions for equestrian transport, food logistics, and mobile workshops.",
+      "descriptionAr": "تجهيز سيارات الفان والباص لنقل الخيل ونقل الطعام وورش الصيانة المتنقلة.",
+      "imageUrl": "/seed/caravan-4.jpg",
+      "visualKey": "factory-cnc",
+      "sortOrder": 1,
+      "createdAt": "2025-01-12T08:00:00.000Z"
+    },
+    {
+      "id": "cat-2",
+      "slug": "gmc-conversions",
+      "nameEn": "GMC Conversions",
+      "nameAr": "أعمال الجموس",
+      "descriptionEn": "Custom GMC canopies, single-cabin campers, integrated bathrooms, and raised-roof builds.",
+      "descriptionAr": "تجهيزات الجموس بمستوى الغمارة ومرتفع 20 و45 سم وحمامات وكتلة واحدة.",
+      "imageUrl": "/seed/caravan-1.jpg",
+      "visualKey": "pickup-canopy",
+      "sortOrder": 2,
+      "createdAt": "2025-01-12T08:05:00.000Z"
+    },
+    {
+      "id": "cat-3",
+      "slug": "gxr-conversions",
+      "nameEn": "GXR Conversions",
+      "nameAr": "أعمال GXR",
+      "descriptionEn": "Drawers, diesel/water tanks, gas drawer kits, roof racks, and SUV builds for GXR, Patrol, Tank 500, and Haval.",
+      "descriptionAr": "أدراج مصبوغة وخزانات ديزل ومياه وعرشات وتجهيزات GXR ونيسان وتانك 500 وهافال.",
+      "imageUrl": "/seed/ram-canopy.jpg",
+      "visualKey": "water-fuel-tank",
+      "sortOrder": 3,
+      "createdAt": "2025-01-12T08:10:00.000Z"
+    },
+    {
+      "id": "cat-4",
+      "slug": "pickup-truck-conversions",
+      "nameEn": "Pickup Truck Conversions",
+      "nameAr": "أعمال جيب بيك أب",
+      "descriptionEn": "Double-cabin, single-cabin, raised-roof, standard-height, and lockable pickup canopies.",
+      "descriptionAr": "تجهيزات جيب بيك أب غمارة وغمارتين وبمستوى الغمارة وفوق مستوى الغمارة.",
+      "imageUrl": "/seed/ram-canopy.jpg",
+      "visualKey": "pickup-canopy",
+      "sortOrder": 4,
+      "createdAt": "2025-01-12T08:15:00.000Z"
+    },
+    {
+      "id": "cat-5",
+      "slug": "mobile-coffee-vehicles",
+      "nameEn": "Mobile Coffee Vehicles",
+      "nameAr": "سيارات مشروع كوفي",
+      "descriptionEn": "Turnkey mobile café builds on Suzuki, Chevrolet, and Volkswagen vehicles with shaded awnings.",
+      "descriptionAr": "تصنيع سيارات مشاريع الكوفي المتنقلة على سوزوكي وشفروليه وفولكس فاجن مع مظلات.",
+      "imageUrl": "/seed/caravan-3.jpg",
+      "visualKey": "fiberglass-caravan",
+      "sortOrder": 5,
+      "createdAt": "2025-01-12T08:20:00.000Z"
+    },
+    {
+      "id": "cat-6",
+      "slug": "caravan-projects",
+      "nameEn": "Caravan Projects",
+      "nameAr": "أعمال الكرفانات",
+      "descriptionEn": "Luxury caravans on GMC 2500, Ford, Mercedes, pickups, port cabins, and trailer modifications.",
+      "descriptionAr": "كرفانات جمس 2500 وفورد ومرسيدس وبورت كابين وكرفانات على جيب وتعديل المزلقانات.",
+      "imageUrl": "/seed/caravan-2.jpg",
+      "visualKey": "aluminum-caravan",
+      "sortOrder": 6,
+      "createdAt": "2025-01-12T08:25:00.000Z"
+    },
+    {
+      "id": "cat-7",
+      "slug": "hilux-conversions",
+      "nameEn": "Hilux Conversions",
+      "nameAr": "أعمال الهايلكس",
+      "descriptionEn": "Custom aluminum canopies for standard, single-cabin, +45 cm raised, and double-cabin Hilux trucks.",
+      "descriptionAr": "شد وتجهيز سيارات تويوتا هايلكس غمارة وغمارتين ومستوى الغمارة ومرتفع 45 سم.",
+      "imageUrl": "/seed/caravan-1.jpg",
+      "visualKey": "pickup-canopy",
+      "sortOrder": 7,
+      "createdAt": "2025-01-12T08:30:00.000Z"
+    },
+    {
+      "id": "cat-8",
+      "slug": "suhail-exhibition-participation",
+      "nameEn": "Suhail Exhibition Participation",
+      "nameAr": "مشاركات معرض سهيل",
+      "descriptionEn": "Continuous annual participation at Suhail Falconry Exhibition, ADIHEX Abu Dhabi, and GCC exhibitions attended by VIPs and outdoor enthusiasts.",
+      "descriptionAr": "تمت المشاركة في معرض سهيل للصقور لعدة سنوات متتالية دون انقطاع، كما شاركت الشركة في معرض أبوظبي للصقور وعدد من المعارض في دول مجلس التعاون الخليجي، بحضور الشيوخ وكبار الشخصيات ومحبي الكشتات والرحلات، مما يعكس خبرة الشركة وريادتها في هذا المجال.",
+      "imageUrl": "/bannerpc1.png",
+      "visualKey": "katara-pavilion",
+      "sortOrder": 8,
+      "createdAt": "2025-01-12T08:35:00.000Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj-alfan-1",
+      "slug": "horse-transport-bus",
+      "titleEn": "Horse Transport Bus",
+      "titleAr": "سيارة باص لنقل الخيل",
+      "descriptionEn": "Custom climate-controlled horse transport bus engineered with non-slip flooring, padded stalls, and rear hydraulic ramp.",
+      "descriptionAr": "تجهيز باص متكامل لنقل الخيل مع عزل حراري وتهوية وأرضيات مانعة للانزلاق ومنحدر تحميل هيدروليكي.",
+      "categorySlug": "alfan-vehicle-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: 7.5m × 2.4m",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: 7.5m × 2.4m",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "aluminum-caravan",
+      "images": [
+        "/seed/caravan-4.jpg",
+        "/seed/caravan-1.jpg",
+        "/seed/caravan-3.jpg"
+      ],
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "sortOrder": 1,
+      "featured": true,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 165000,
+      "dimensions": "7.5m × 2.4m",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-alfan-2",
+      "slug": "horse-transport-van",
+      "titleEn": "Horse Transport Van",
+      "titleAr": "سيارة فان لنقل الخيل",
+      "descriptionEn": "Reinforced aluminum interior van conversion built for safe equestrian transport across Qatar and the GCC.",
+      "descriptionAr": "تجهيز فان لنقل الخيل بتدعيم ألمنيوم داخلي وتكييف خلفي وفواصل أمان مخصصة.",
+      "categorySlug": "alfan-vehicle-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: 5.8m × 2.1m",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: 5.8m × 2.1m",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/caravan-2.jpg",
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 2,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 98000,
+      "dimensions": "5.8m × 2.1m",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-alfan-3",
+      "slug": "food-delivery-van",
+      "titleEn": "Food Delivery Van",
+      "titleAr": "سيارة فان لنقل الطعام",
+      "descriptionEn": "Hygienic stainless-lined insulated van conversion with chilled storage compartments and municipal compliance.",
+      "descriptionAr": "تجهيز فان لنقل وتوصيل الطعام ببطانة ستانلس ستيل وعزل حراري وتبريد مطابق للاشتراطات.",
+      "categorySlug": "alfan-vehicle-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: 5.2m × 2.0m",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: 5.2m × 2.0m",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "fiberglass-caravan",
+      "images": [
+        "/seed/caravan-3.jpg",
+        "/seed/caravan-2.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 3,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 76000,
+      "dimensions": "5.2m × 2.0m",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-alfan-4",
+      "slug": "mobile-workshop-van",
+      "titleEn": "Mobile Workshop Van",
+      "titleAr": "سيارة فان ورشة",
+      "descriptionEn": "Field-service mobile workshop featuring heavy-duty aluminum tool cabinets, generator bay, and compressor lines.",
+      "descriptionAr": "تجهيز فان ورشة صيانة متنقلة بخزائن أدوات ألمنيوم ومولد كهربائي ومنظومة هواء مضغوط.",
+      "categorySlug": "alfan-vehicle-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: 5.5m × 2.05m",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: 5.5m × 2.05m",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "factory-cnc",
+      "images": [
+        "/seed/caravan-4.jpg",
+        "/seed/ram-canopy.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 4,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 84000,
+      "dimensions": "5.5m × 2.05m",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gmc-1",
+      "slug": "single-cabin-gmc",
+      "titleEn": "Single Cabin GMC",
+      "titleAr": "جمس كتلة واحدة",
+      "descriptionEn": "Seamless single-body GMC camper conversion with flush aluminum cladding, side lockers, and solar readiness.",
+      "descriptionAr": "تجهيز جمس كتلة واحدة بتصميم انسيابي موحد من الألمنيوم مع خزائن جانبية وتمديدات شمسية.",
+      "categorySlug": "gmc-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: 5.9m × 2.15m",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: 5.9m × 2.15m",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/caravan-1.jpg",
+        "/seed/caravan-2.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 5,
+      "featured": true,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 112000,
+      "dimensions": "5.9m × 2.15m",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gmc-2",
+      "slug": "gmc-bathroom-conversion",
+      "titleEn": "GMC Bathroom Conversion",
+      "titleAr": "حمام على جمس",
+      "descriptionEn": "Compact waterproof fiberglass bathroom module integrated cleanly into a GMC pickup bed with fresh/grey tanks.",
+      "descriptionAr": "وحدة حمام متكاملة مقاومة للماء ومصنوعة من الفايبرجلاس على سيارة جمس مع خزانات مياه.",
+      "categorySlug": "gmc-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "fiberglass-caravan",
+      "images": [
+        "/seed/ram-canopy.jpg",
+        "/seed/caravan-3.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 6,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 38000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gmc-3",
+      "slug": "gmc-raised-roof-standard",
+      "titleEn": "GMC Raised Roof (Standard)",
+      "titleAr": "شد جمس على مستوى العمارة",
+      "descriptionEn": "Flush roof-height GMC aluminum canopy built to match cab aerodynamics with dust-sealed gullwing doors.",
+      "descriptionAr": "شد جمس ألمنيوم بمستوى الغمارة تماماً لتقليل مقاومة الهواء مع أبواب جانبية محكمة ضد الغبار.",
+      "categorySlug": "gmc-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/ram-canopy.jpg",
+        "/seed/caravan-1.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 7,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 34000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gmc-4",
+      "slug": "gmc-raised-roof-20",
+      "titleEn": "GMC Raised Roof (+20 cm)",
+      "titleAr": "شد جمس فوق مستوى العمارة 20",
+      "descriptionEn": "Elevated +20 cm GMC aluminum canopy offering extra interior headroom, fridge slide, and roof rack.",
+      "descriptionAr": "شد جمس مرتفع 20 سم عن مستوى الغمارة لتوفير مساحة تخزين إضافية وسلة علوية.",
+      "categorySlug": "gmc-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/caravan-2.jpg",
+        "/seed/ram-canopy.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 8,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 37500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gmc-5",
+      "slug": "gmc-raised-roof-45",
+      "titleEn": "GMC Raised Roof (+45 cm)",
+      "titleAr": "شد جمس فوق مستوى العمارة 45",
+      "descriptionEn": "High-volume +45 cm raised GMC expedition build with sleeping deck, LED lighting, and auxiliary battery system.",
+      "descriptionAr": "شد جمس مرتفع 45 سم فوق مستوى الغمارة مع مساحة نوم مريحة وإضاءة LED ومنظومة بطاريات.",
+      "categorySlug": "gmc-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "aluminum-caravan",
+      "images": [
+        "/seed/caravan-1.jpg",
+        "/seed/caravan-3.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 9,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 44000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gxr-1",
+      "slug": "painted-drawers-2019",
+      "titleEn": "Painted Drawers (2019)",
+      "titleAr": "أدراج مصبوغة 2019",
+      "descriptionEn": "Precision-fit rear storage drawer system with automotive powder-coat finish for Land Cruiser GXR.",
+      "descriptionAr": "نظام أدراج خلفية مصبوغة حرارياً مصمم بدقة لسيارة لاندكروزر GXR.",
+      "categorySlug": "gxr-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "factory-cnc",
+      "images": [
+        "/seed/ram-canopy.jpg",
+        "/seed/caravan-2.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 10,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 8500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gxr-2",
+      "slug": "gxr-diesel-tank",
+      "titleEn": "Diesel Tank",
+      "titleAr": "خزان ديزل",
+      "descriptionEn": "Baffled auxiliary diesel fuel tank engineered for GXR underbody clearance and long-range desert travel.",
+      "descriptionAr": "خزان ديزل إضافي مزود بقواطع داخلية ومصمم أسفل الهيكل للرحلات الصحراوية الطويلة.",
+      "categorySlug": "gxr-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "water-fuel-tank",
+      "images": [
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 11,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 9200,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gxr-3",
+      "slug": "gxr-53l-water-tank",
+      "titleEn": "53L Water Tank",
+      "titleAr": "خزان ماء 53 لتر",
+      "descriptionEn": "Food-grade 53-liter stainless steel water tank custom-molded for Land Cruiser GXR rear wheel well.",
+      "descriptionAr": "خزان ماء سعة 53 لتر من الستانلس ستيل الغذائي مصمم بدقة للمساحة الخلفية.",
+      "categorySlug": "gxr-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "water-fuel-tank",
+      "images": [
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 12,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 4200,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gxr-4",
+      "slug": "drawer-with-gas-system",
+      "titleEn": "Drawer with Gas System",
+      "titleAr": "درج مع غاز",
+      "descriptionEn": "Slide-out aluminum kitchen drawer integrating dual gas burners, wind shield, and utensil organizer.",
+      "descriptionAr": "درج مطبخ سحب من الألمنيوم مزود بشعلة غاز مزدوجة وواقي هواء ومنظم أدوات.",
+      "categorySlug": "gxr-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/ram-canopy.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 13,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 9800,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gxr-5",
+      "slug": "tank-500-vehicle",
+      "titleEn": "Tank 500 Vehicle",
+      "titleAr": "سيارة تانك 500",
+      "descriptionEn": "Custom expedition drawer system, water storage, and roof rack tailored for GWM Tank 500.",
+      "descriptionAr": "تجهيز متكامل لسيارة تانك 500 يشمل أدراج رحلات وخزان ماء وسلة سقف.",
+      "categorySlug": "gxr-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/caravan-2.jpg",
+        "/seed/ram-canopy.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 14,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 16500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gxr-6",
+      "slug": "haval-conversion",
+      "titleEn": "Haval Conversion",
+      "titleAr": "سيارة هافال",
+      "descriptionEn": "Lightweight aluminum camp kitchen, power station mount, and roof platform tailored for Haval SUVs.",
+      "descriptionAr": "تجهيز ألمنيوم خفيف الوزن لسيارات هافال مع مطبخ سحب ومنصة سقف.",
+      "categorySlug": "gxr-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/caravan-3.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 15,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 14500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gxr-7",
+      "slug": "roof-rack-for-gxr",
+      "titleEn": "Roof Rack for GXR",
+      "titleAr": "عرشة على جي اكس",
+      "descriptionEn": "Low-profile CNC aluminum expedition roof rack with integrated LED lightbar mounts for Land Cruiser GXR.",
+      "descriptionAr": "عرشة سقف ألمنيوم منخفضة الارتفاع لسيارة جي إكس آر مع تثبيت كشافات LED.",
+      "categorySlug": "gxr-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "factory-cnc",
+      "images": [
+        "/seed/caravan-1.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 16,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 6800,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-gxr-8",
+      "slug": "nissan-patrol-platinum",
+      "titleEn": "Nissan Patrol Platinum",
+      "titleAr": "نيسان بلاتينيوم",
+      "descriptionEn": "Bespoke rear drawer organizer, dual-battery tray, and water pump kit for Nissan Patrol Platinum.",
+      "descriptionAr": "تجهيز خلفي فاخر لنيسان باترول بلاتينيوم يشمل أدراجاً ومنظومة بطارية إضافية ومضخة مياه.",
+      "categorySlug": "gxr-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/ram-canopy.jpg",
+        "/seed/caravan-1.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 17,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 17500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-pickup-1",
+      "slug": "double-cabin-pickup",
+      "titleEn": "Double Cabin Pickup",
+      "titleAr": "جيب غمارتين",
+      "descriptionEn": "Full aluminum expedition canopy and kitchen drawer build for double-cabin 4x4 pickups.",
+      "descriptionAr": "تجهيز شد ألمنيوم متكامل لسيارات جيب بيك أب غمارتين مع أدراج ومطبخ رحلات.",
+      "categorySlug": "pickup-truck-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/ram-canopy.jpg",
+        "/seed/caravan-1.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 18,
+      "featured": true,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 35500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-pickup-2",
+      "slug": "raised-roof-pickup",
+      "titleEn": "Raised Roof Pickup",
+      "titleAr": "جيب فوق مستوى العمارة",
+      "descriptionEn": "High-clearance raised pickup canopy offering standing utility and rooftop tent structural support.",
+      "descriptionAr": "شد بيك أب مرتفع فوق مستوى الغمارة يوفر مساحة رأس رحبة وتحمل عالٍ لخيام السقف.",
+      "categorySlug": "pickup-truck-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/caravan-2.jpg",
+        "/seed/ram-canopy.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 19,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 39000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-pickup-3",
+      "slug": "single-cabin-pickup",
+      "titleEn": "Single Cabin Pickup",
+      "titleAr": "جيب كتلة واحدة",
+      "descriptionEn": "Single-piece integrated aluminum camper body mounted directly to a pickup chassis.",
+      "descriptionAr": "تجهيز جيب بيك أب كتلة واحدة بهيكل ألمنيوم متكامل ومتصل بالغمارة.",
+      "categorySlug": "pickup-truck-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "aluminum-caravan",
+      "images": [
+        "/seed/caravan-1.jpg",
+        "/seed/caravan-3.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 20,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 94000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-pickup-4",
+      "slug": "standard-height-pickup",
+      "titleEn": "Standard Height Pickup",
+      "titleAr": "جيب مستوى العمارة",
+      "descriptionEn": "Cab-level aerodynamic pickup canopy engineered for daily utility and weekend desert excursions.",
+      "descriptionAr": "شد بمستوى الغمارة يجمع بين المظهر الانسيابي والاستخدام اليومي والرحلات.",
+      "categorySlug": "pickup-truck-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/ram-canopy.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 21,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 32500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-pickup-5",
+      "slug": "pickup-canopy-cover",
+      "titleEn": "Pickup Canopy",
+      "titleAr": "غطاء جيب بيك أب",
+      "descriptionEn": "Heavy-duty lockable aluminum bed cover / canopy with weatherproof seals and gas struts.",
+      "descriptionAr": "غطاء وشد ألمنيوم محكم الإغلاق لصندوق الجيب بيك أب مع مساعدات هيدروليك وأقفال أمان.",
+      "categorySlug": "pickup-truck-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/ram-canopy.jpg",
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 22,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 18500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-coffee-1",
+      "slug": "coffee-on-suzuki",
+      "titleEn": "Coffee on Suzuki",
+      "titleAr": "كوفي على سوزوكي",
+      "descriptionEn": "Turnkey compact coffee truck conversion on Suzuki Carry with stainless counters, espresso plumbing, and serving hatch.",
+      "descriptionAr": "مشروع كوفي متنقل متكامل على سيارة سوزوكي مع كاونترات ستانلس ستيل وتمديدات مياه وكهرباء وشباك تقديم.",
+      "categorySlug": "mobile-coffee-vehicles",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "fiberglass-caravan",
+      "images": [
+        "/seed/caravan-3.jpg",
+        "/seed/caravan-2.jpg"
+      ],
+      "videoUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+      "sortOrder": 23,
+      "featured": true,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 62000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-coffee-2",
+      "slug": "coffee-on-chevrolet",
+      "titleEn": "Coffee on Chevrolet",
+      "titleAr": "كوفي على شفروليه",
+      "descriptionEn": "High-capacity commercial mobile café built on Chevrolet chassis with silent generator bay and display chiller.",
+      "descriptionAr": "تجهيز سيارة كوفي احترافية على شفروليه مع مساحة لمكائن الإسبريسو وثلاجات العرض ومولد صامت.",
+      "categorySlug": "mobile-coffee-vehicles",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "aluminum-caravan",
+      "images": [
+        "/seed/caravan-4.jpg",
+        "/seed/caravan-1.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 24,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 88000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-coffee-3",
+      "slug": "coffee-on-volkswagen",
+      "titleEn": "Coffee on Volkswagen",
+      "titleAr": "كوفي على فولكس فاجن",
+      "descriptionEn": "Signature retro-inspired mobile coffee bar built on Volkswagen van with illuminated menu board and pop-up roof.",
+      "descriptionAr": "تصميم مميز لمشروع كوفي على فولكس فاجن مع سقف مرتفع ولوحة مضيئة وتشطيب فاخر.",
+      "categorySlug": "mobile-coffee-vehicles",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "fiberglass-caravan",
+      "images": [
+        "/seed/caravan-2.jpg",
+        "/seed/caravan-3.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 25,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 94000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-coffee-4",
+      "slug": "coffee-with-awning-suzuki",
+      "titleEn": "Coffee with Awning on Suzuki",
+      "titleAr": "كوفي مع مظلة على سوزوكي",
+      "descriptionEn": "Compact Suzuki café build equipped with extendable shaded customer awning and outdoor seating lighting.",
+      "descriptionAr": "تجهيز كوفي على سوزوكي مزود بمظلة جانبية قابلة للفتح لخدمة العملاء وإضاءة خارجية.",
+      "categorySlug": "mobile-coffee-vehicles",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "tent-structure",
+      "images": [
+        "/seed/caravan-3.jpg",
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 26,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 68000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-caravan-1",
+      "slug": "trailer-modifications",
+      "titleEn": "Trailer Modifications",
+      "titleAr": "تعديل المزلقانات",
+      "descriptionEn": "Structural chassis reinforcement, axle upgrades, and custom ramp modifications for marine and desert trailers.",
+      "descriptionAr": "تعديل وتدعيم شاصيهات المزلقانات والمقطورات البحرية والصحراوية ورفع كفاءة المحاور.",
+      "categorySlug": "caravan-projects",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "factory-cnc",
+      "images": [
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 27,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 24000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-caravan-2",
+      "slug": "ford-stick-vehicle",
+      "titleEn": "Ford Stick Vehicle",
+      "titleAr": "سيارة فورد ستيك",
+      "descriptionEn": "Custom aluminum expedition body mounted on Ford F-Series chassis with full living quarters and storage.",
+      "descriptionAr": "تجهيز كرفان وغرفة معيشة متكاملة من الألمنيوم على سيارة فورد ستيك.",
+      "categorySlug": "caravan-projects",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "aluminum-caravan",
+      "images": [
+        "/seed/caravan-1.jpg",
+        "/seed/caravan-2.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 28,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 178000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-caravan-3",
+      "slug": "port-cabin-caravan",
+      "titleEn": "Port Cabin Caravan",
+      "titleAr": "كرفان بورت كابين",
+      "descriptionEn": "Heavy-duty insulated portable cabin caravan designed for desert camps, site offices, and VIP retreats.",
+      "descriptionAr": "كرفان بورت كابين معزول بالكامل ومجهز للمخيمات الشتوية والمكاتب الميدانية.",
+      "categorySlug": "caravan-projects",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "aluminum-caravan",
+      "images": [
+        "/seed/caravan-3.jpg",
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 29,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 85000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-caravan-4",
+      "slug": "gmc-2500-caravan",
+      "titleEn": "GMC 2500 Caravan",
+      "titleAr": "كرفان جمس 2500",
+      "descriptionEn": "Flagship 2025 balcony motorhome built on GMC HD 2500 with luxury majlis, solar bank, and rear deck.",
+      "descriptionAr": "كرفان فاخر على جمس HD 2500 موديل 2025 مزود ببلكونة خلفية ومجلس ومنظومة طاقة شمسية.",
+      "categorySlug": "caravan-projects",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "hero-caravan",
+      "images": [
+        "/seed/caravan-1.jpg",
+        "/seed/caravan-2.jpg",
+        "/seed/caravan-3.jpg",
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
+      "sortOrder": 30,
+      "featured": true,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 195000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-caravan-5",
+      "slug": "gmc-stick-caravan",
+      "titleEn": "GMC Stick Caravan",
+      "titleAr": "كرفان جمس ستيك",
+      "descriptionEn": "Long-wheelbase GMC stick chassis converted into an off-grid expedition caravan with twin air conditioning.",
+      "descriptionAr": "تحويل شاصيه جمس ستيك إلى كرفان رحلات متكامل مع تكييف مزدوج وخزانات مياه.",
+      "categorySlug": "caravan-projects",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "aluminum-caravan",
+      "images": [
+        "/seed/caravan-2.jpg",
+        "/seed/caravan-1.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 31,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 172000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-caravan-6",
+      "slug": "caravan-on-pickup",
+      "titleEn": "Caravan on Pickup",
+      "titleAr": "كرفان على جيب بيك أب",
+      "descriptionEn": "Slide-in & chassis-mounted compact expedition caravan engineered specifically for 4x4 pickup trucks.",
+      "descriptionAr": "كرفان خفيف الوزن مصمم للتركيب على سيارات الجيب بيك أب للوصول إلى أعمق الكثبان.",
+      "categorySlug": "caravan-projects",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/ram-canopy.jpg",
+        "/seed/caravan-1.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 32,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 118000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-caravan-7",
+      "slug": "caravan-on-mercedes",
+      "titleEn": "Caravan on Mercedes",
+      "titleAr": "كرفان على مرسيدس",
+      "descriptionEn": "Bespoke luxury expedition camper conversion on Mercedes-Benz commercial chassis with walnut interior.",
+      "descriptionAr": "كرفان فاخر مجهز على شاصيه مرسيدس بنز بتشطيبات خشب الجوز ومنظومة طاقة مستقلة.",
+      "categorySlug": "caravan-projects",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "vip-majlis",
+      "images": [
+        "/seed/caravan-3.jpg",
+        "/seed/caravan-1.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 33,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 245000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-hilux-1",
+      "slug": "standard-hilux",
+      "titleEn": "Standard Hilux",
+      "titleAr": "هايلكس على مستوى",
+      "descriptionEn": "Cab-level aluminum canopy for Toyota Hilux engineered for clean lines, rear drawer integration, and daily durability.",
+      "descriptionAr": "شد ألمنيوم لتويوتا هايلكس بمستوى الغمارة مع أدراج خلفية وتشطيب مقاوم للعوامل الجوية.",
+      "categorySlug": "hilux-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/ram-canopy.jpg",
+        "/seed/caravan-2.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 34,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 26500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-hilux-2",
+      "slug": "single-cabin-hilux",
+      "titleEn": "Single Cabin Hilux",
+      "titleAr": "هايلكس غمارة",
+      "descriptionEn": "Full-length single-cabin Hilux aluminum expedition box with gullwing doors and water storage.",
+      "descriptionAr": "تجهيز صندوق رحلات طويل لهايلكس غمارة بأبواب جانبية وخزان مياه مدمج.",
+      "categorySlug": "hilux-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/caravan-4.jpg",
+        "/seed/ram-canopy.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 35,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 29500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-hilux-3",
+      "slug": "single-cabin-hilux-45",
+      "titleEn": "Single Cabin Hilux (+45 cm)",
+      "titleAr": "هايلكس غمارة مرتفع 45",
+      "descriptionEn": "High-roof +45 cm aluminum camper canopy on single-cabin Hilux designed for overnight desert camping.",
+      "descriptionAr": "شد هايلكس غمارة مرتفع 45 سم فوق الغمارة مهيأ للمبيت والتخزين الكبير في الرحلات.",
+      "categorySlug": "hilux-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "aluminum-caravan",
+      "images": [
+        "/seed/caravan-1.jpg",
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 36,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 34500,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-hilux-4",
+      "slug": "double-cabin-hilux-raised",
+      "titleEn": "Double Cabin Hilux Raised",
+      "titleAr": "هايلكس غمارتين مرتفع",
+      "descriptionEn": "Raised expedition canopy for double-cabin Hilux featuring slide-out kitchen, fridge mount, and roof rack.",
+      "descriptionAr": "شد مرتفع لهايلكس غمارتين مع مطبخ سحب ومكان مخصص للثلاجة وسلة علوية.",
+      "categorySlug": "hilux-conversions",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "pickup-canopy",
+      "images": [
+        "/seed/caravan-2.jpg",
+        "/seed/ram-canopy.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 37,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 33000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-suhail-1",
+      "slug": "suhail-katara-falconry-pavilion",
+      "titleEn": "Suhail International Hunting & Falcons Exhibition — Katara",
+      "titleAr": "جناح مصنع الوطن العربي في معرض سهيل بكتارا",
+      "descriptionEn": "Annual uninterrupted showcase at Katara Cultural Village presenting custom falconry vehicles, VIP caravans, and GCC expedition canopies.",
+      "descriptionAr": "تمت المشاركة في معرض سهيل للصقور لعدة سنوات متتالية دون انقطاع، بحضور الشيوخ وكبار الشخصيات ومحبي الكشتات والرحلات لاستعراض أحدث الكرفانات والتجهيزات.",
+      "categorySlug": "suhail-exhibition-participation",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "katara-pavilion",
+      "images": [
+        "/bannerpc1.png",
+        "/seed/caravan-1.jpg",
+        "/seed/ram-canopy.jpg"
+      ],
+      "videoUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+      "sortOrder": 38,
+      "featured": true,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 150000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "prj-suhail-2",
+      "slug": "adihex-abu-dhabi-gcc-exhibitions",
+      "titleEn": "Abu Dhabi Hunting Exhibition & GCC Showcases",
+      "titleAr": "معرض أبوظبي للصقور والمعارض الخليجية",
+      "descriptionEn": "Participation in ADIHEX Abu Dhabi and regional GCC outdoor exhibitions presenting Qatari-manufactured expedition caravans and canopies.",
+      "descriptionAr": "مشاركة متميزة في معرض أبوظبي للصقور وعدد من المعارض في دول مجلس التعاون الخليجي بما يعكس خبرة الشركة وريادتها في هذا المجال.",
+      "categorySlug": "suhail-exhibition-participation",
+      "completionDate": "2026-09-15",
+      "specs": [
+        "Dimensions: Custom Fitment",
+        "Material: 5083 Marine-Grade Aluminum",
+        "Finish: Heat-Resistant GCC Coating & Dust Sealing"
+      ],
+      "specsAr": [
+        "الأبعاد: تفصيل حسب المركبة",
+        "المادة: ألمنيوم بحري مقاوم للصدأ",
+        "التشطيب: عزل حراري وتغطية محكمة ضد الغبار"
+      ],
+      "visualKey": "katara-pavilion",
+      "images": [
+        "/bannerpc2.png",
+        "/seed/caravan-3.jpg",
+        "/seed/caravan-4.jpg"
+      ],
+      "videoUrl": "",
+      "sortOrder": 39,
+      "featured": false,
+      "published": true,
+      "leadTimeWeeks": 4,
+      "startingPriceQar": 160000,
+      "dimensions": "Custom Fitment",
+      "material": "Marine-Grade Aluminum",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    }
+  ],
+  "visits": [
+    {
+      "id": "vis-1",
+      "slug": "katara-suhail-exhibition-2026",
+      "titleEn": "Suhail International Hunting & Falcons Exhibition — Katara",
+      "titleAr": "معرض سهيل الدولي للصيد والصقور — الحي الثقافي كتارا",
+      "descriptionEn": "Continuous annual participation at Katara showcasing our luxury caravans, pickup canopies, and GCC expedition equipment.",
+      "descriptionAr": "تمت المشاركة في معرض سهيل للصقور لعدة سنوات متتالية دون انقطاع، بحضور الشيوخ وكبار الشخصيات ومحبي الكشتات والرحلات.",
+      "type": "exhibition",
+      "locationEn": "Katara Cultural Village, Doha",
+      "locationAr": "الحي الثقافي كتارا، الدوحة",
+      "eventDate": "2026-09-10",
+      "visualKey": "katara-pavilion",
+      "images": [
+        "/bannerpc1.png",
+        "/seed/caravan-1.jpg"
+      ],
+      "isKataraFeatured": true,
+      "published": true,
+      "createdAt": "2026-09-12T09:00:00.000Z"
+    },
+    {
+      "id": "vis-2",
+      "slug": "adihex-abu-dhabi-exhibition",
+      "titleEn": "Abu Dhabi International Hunting & Equestrian Exhibition",
+      "titleAr": "معرض أبوظبي الدولي للصيد والفروسية",
+      "descriptionEn": "Represented Qatari craftsmanship in Abu Dhabi with custom GMC 2500 caravans, GXR drawers, and horse transport vehicles.",
+      "descriptionAr": "مشاركة الشركة في معرض أبوظبي للصقور وعدد من المعارض في دول مجلس التعاون الخليجي لاستعراض أحدث الكرفانات والشدود.",
+      "type": "exhibition",
+      "locationEn": "ADNEC, Abu Dhabi, UAE",
+      "locationAr": "مركز أبوظبي الوطني للمعارض، الإمارات",
+      "eventDate": "2026-08-25",
+      "visualKey": "katara-pavilion",
+      "images": [
+        "/bannerpc2.png"
+      ],
+      "isKataraFeatured": true,
+      "published": true,
+      "createdAt": "2026-08-26T14:00:00.000Z"
+    },
+    {
+      "id": "vis-3",
+      "slug": "vip-gcc-delegation-visit",
+      "titleEn": "VIP & Sheikhs Pavilion Inspection at Katara",
+      "titleAr": "زيارات الشيوخ وكبار الشخصيات لجناح المصنع",
+      "descriptionEn": "Welcomed VIP guests and GCC delegation leaders inspecting our custom aluminum fabrication and caravan interiors.",
+      "descriptionAr": "تشرّف جناح المصنع بزيارات الشيوخ وكبار الشخصيات ومحبي الكشتات للاطلاع على جودة التصنيع المحلي.",
+      "type": "visit",
+      "locationEn": "Katara & Doha Factory",
+      "locationAr": "كتارا ومصنع الدوحة",
+      "eventDate": "2026-07-15",
+      "visualKey": "vip-majlis",
+      "images": [
+        "/seed/caravan-3.jpg"
+      ],
+      "isKataraFeatured": true,
+      "published": true,
+      "createdAt": "2026-07-16T10:30:00.000Z"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gal-1",
+      "titleEn": "GMC 2500 Balcony Caravan",
+      "titleAr": "كرفان جمس 2500 موديل 2025 بلكونة",
+      "album": "أعمال الكرفانات",
+      "category": "Projects",
+      "mediaType": "image",
+      "mediaUrl": "/seed/caravan-1.jpg",
+      "visualKey": "hero-caravan",
+      "altText": "GMC 2500 Caravan",
+      "published": true,
+      "createdAt": "2026-10-03T15:00:45.623Z"
+    },
+    {
+      "id": "gal-2",
+      "titleEn": "RAM Heavy-Duty Canopy",
+      "titleAr": "شد ألمنيوم احترافي على سيارة رام",
+      "album": "أعمال جيب بيك أب",
+      "category": "Exhibitions",
+      "mediaType": "image",
+      "mediaUrl": "/seed/ram-canopy.jpg",
+      "visualKey": "pickup-canopy",
+      "altText": "RAM Canopy",
+      "published": true,
+      "createdAt": "2026-08-16T16:48:52.330Z"
+    },
+    {
+      "id": "gal-3",
+      "titleEn": "Interior Majlis & Finishing",
+      "titleAr": "التشطيب الداخلي والمجلس",
+      "album": "أعمال الكرفانات",
+      "category": "Projects",
+      "mediaType": "image",
+      "mediaUrl": "/seed/caravan-2.jpg",
+      "visualKey": "aluminum-caravan",
+      "altText": "Caravan interior",
+      "published": true,
+      "createdAt": "2026-09-11T18:00:00.000Z"
+    },
+    {
+      "id": "gal-4",
+      "titleEn": "Mobile Coffee & Rear Balcony",
+      "titleAr": "تجهيز كوفي وكرفان بلكونة",
+      "album": "سيارات مشروع كوفي",
+      "category": "Products",
+      "mediaType": "image",
+      "mediaUrl": "/seed/caravan-3.jpg",
+      "visualKey": "fiberglass-caravan",
+      "altText": "Rear balcony deck",
+      "published": true,
+      "createdAt": "2026-08-26T12:00:00.000Z"
+    },
+    {
+      "id": "gal-5",
+      "titleEn": "Doha Factory Assembly Bay",
+      "titleAr": "خطوط التصنيع والتجميع بالدوحة",
+      "album": "أعمال ألفان",
+      "category": "Factory",
+      "mediaType": "image",
+      "mediaUrl": "/seed/caravan-4.jpg",
+      "visualKey": "factory-cnc",
+      "altText": "Factory assembly",
+      "published": true,
+      "createdAt": "2026-07-23T14:00:00.000Z"
+    },
+    {
+      "id": "gal-6",
+      "titleEn": "Suhail Katara Showcase",
+      "titleAr": "مشاركة معرض سهيل بكتارا",
+      "album": "مشاركات معرض سهيل",
+      "category": "VIP Visits",
+      "mediaType": "image",
+      "mediaUrl": "/bannerpc1.png",
+      "visualKey": "katara-pavilion",
+      "altText": "Katara VIP Exhibition",
+      "published": true,
+      "createdAt": "2026-08-06T16:00:00.000Z"
+    }
+  ],
+  "videos": [
+    {
+      "id": "vid-1",
+      "titleEn": "Al Watan Al Arabi Factory — Production Tour",
+      "titleAr": "جولة داخل مصنع الوطن العربي بالدوحة",
+      "descriptionEn": "CNC aluminum fabrication, GMC & Hilux canopies, and luxury caravan assembly.",
+      "descriptionAr": "تغطية لخطوط القص بالليزر وتجهيز شدود الجموس والهايلكس والكرفانات.",
+      "sourceType": "youtube",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "visualKey": "factory-cnc",
+      "duration": "03:45",
+      "category": "Factory Tour",
+      "published": true,
+      "createdAt": "2026-09-01T10:00:00.000Z"
+    },
+    {
+      "id": "vid-2",
+      "titleEn": "Suhail Exhibition Highlights — Katara",
+      "titleAr": "أبرز لقطات مشاركاتنا في معرض سهيل بكتارا",
+      "descriptionEn": "VIP visitors, custom desert vehicles, and mobile coffee projects at Suhail Exhibition.",
+      "descriptionAr": "زيارات كبار الشخصيات واستعراض أحدث التجهيزات في معرض سهيل.",
+      "sourceType": "youtube",
+      "videoUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+      "visualKey": "katara-pavilion",
+      "duration": "02:50",
+      "category": "Exhibitions",
+      "published": true,
+      "createdAt": "2026-09-14T14:00:00.000Z"
+    }
+  ],
+  "quotes": [
+    {
+      "id": "qt-101",
+      "referenceCode": "RFQ-2026-041",
+      "customerName": "حمد آل ثاني",
+      "companyName": "مخيمات الشحانية",
+      "email": "hamad@shahaniyacamps.qa",
+      "phone": "+974 5541 2900",
+      "country": "Qatar",
+      "categorySlug": "caravan-projects",
+      "projectTitle": "كرفان جمس 2500",
+      "lengthMeters": 6.2,
+      "capacityLiters": 420,
+      "insulationTier": "expedition_pro",
+      "offGridPackage": true,
+      "estimatedPriceQar": 195000,
+      "estimatedLeadWeeks": 6,
+      "notes": "مطلوب تكييف سقفي مزدوج ومظلة جانبية كهربائية.",
+      "internalNotes": "تمت مراجعة المخطط الهندسي.",
+      "status": "quoted",
+      "createdAt": "2026-11-12T08:40:00.000Z"
+    },
+    {
+      "id": "qt-102",
+      "referenceCode": "RFQ-2026-042",
+      "customerName": "فيصل القحطاني",
+      "companyName": "مشروع قهوة متنقلة",
+      "email": "faisal@overlandksa.sa",
+      "phone": "+966 50 812 4401",
+      "country": "Saudi Arabia",
+      "categorySlug": "mobile-coffee-vehicles",
+      "projectTitle": "كوفي مع مظلة على سوزوكي",
+      "lengthMeters": 3.4,
+      "capacityLiters": 120,
+      "insulationTier": "gcc_thermal",
+      "offGridPackage": true,
+      "estimatedPriceQar": 68000,
+      "estimatedLeadWeeks": 4,
+      "notes": "تجهيز كامل لسيارة سوزوكي مع مولد صامت وخزان ماء ستانلس.",
+      "internalNotes": "قيد التنفيذ في قسم الألمنيوم.",
+      "status": "in_production",
+      "createdAt": "2026-11-14T11:15:00.000Z"
+    }
+  ],
+  "settings": {
+    "stats": {
+      "projects": 128,
+      "visitors": 42000,
+      "years": 15,
+      "exhibitions": 12
+    },
+    "hero": {
+      "brandNameEn": "Al Watan Al Arabi Factory",
+      "brandNameAr": "مصنع الوطن العربي",
+      "titleEn": "Al Watan Al Arabi Factory",
+      "titleAr": "مصنع الوطن العربي",
+      "subtitleEn": "Al Watan Al Arabi Factory specializes in aluminum fabrication, fiberglass products, water and fuel tanks, and luxury caravan systems for the GCC.",
+      "subtitleAr": "مصنع الوطن العربي متخصص في تصنيع الألومنيوم، الألياف الزجاجية، خزانات المياه والوقود، وأنظمة الكرفانات الفاخرة لدول الخليج.",
+      "imageUrl": "/bannerpc1.png",
+      "mobileImageUrl": "/bannermobile1.jpeg",
+      "logoUrl": "/logo.jpeg",
+      "visualKey": "hero-caravan"
+    },
+    "secondBanner": {
+      "titleEn": "Built for Every Journey",
+      "titleAr": "مصنوعة لكل رحلة",
+      "textEn": "Al Watan Al Arabi Factory specializes in aluminum fabrication, fiberglass products, water and fuel tanks, and luxury caravan systems for the GCC.",
+      "textAr": "مصنع الوطن العربي متخصص في تصنيع الألومنيوم، الألياف الزجاجية، خزانات المياه والوقود، وأنظمة الكرفانات الفاخرة لدول الخليج.",
+      "image": "/bannerpc2.png",
+      "visualKey": "aluminum-caravan"
+    },
+    "iconsRow": [
+      {
+        "id": "ic-1",
+        "icon": "🚐",
+        "titleEn": "Alfan Conversions",
+        "titleAr": "أعمال ألفان",
+        "link": "/portfolio/alfan-vehicle-conversions"
+      },
+      {
+        "id": "ic-2",
+        "icon": "🛻",
+        "titleEn": "GMC Conversions",
+        "titleAr": "أعمال الجموس",
+        "link": "/portfolio/gmc-conversions"
+      },
+      {
+        "id": "ic-3",
+        "icon": "🚙",
+        "titleEn": "GXR Conversions",
+        "titleAr": "أعمال GXR",
+        "link": "/portfolio/gxr-conversions"
+      },
+      {
+        "id": "ic-4",
+        "icon": "🏗️",
+        "titleEn": "Pickup Conversions",
+        "titleAr": "أعمال جيب بيك أب",
+        "link": "/portfolio/pickup-truck-conversions"
+      },
+      {
+        "id": "ic-5",
+        "icon": "☕",
+        "titleEn": "Coffee Vehicles",
+        "titleAr": "سيارات مشروع كوفي",
+        "link": "/portfolio/mobile-coffee-vehicles"
+      },
+      {
+        "id": "ic-6",
+        "icon": "🛣️",
+        "titleEn": "Caravans",
+        "titleAr": "أعمال الكرفانات",
+        "link": "/portfolio/caravan-projects"
+      },
+      {
+        "id": "ic-7",
+        "icon": "⛺",
+        "titleEn": "Hilux & Suhail",
+        "titleAr": "أعمال الهايلكس وسهيل",
+        "link": "/portfolio/hilux-conversions"
+      }
+    ],
+    "about": {
+      "morningHours": "السبت – الخميس: 08:00 صباحاً – 01:00 ظهراً",
+      "eveningHours": "السبت – الخميس: 03:30 عصراً – 08:00 مساءً",
+      "locationEn": "Street 34, Industrial Area, Doha, Qatar",
+      "locationAr": "شارع 34، المنطقة الصناعية، الدوحة، قطر",
+      "mapUrl": "https://www.google.com/maps?q=Industrial+Area+Doha+Qatar&output=embed"
+    },
+    "contact": {
+      "phone": "+974 55 123 456",
+      "phone2": "+974 44 601 820",
+      "whatsapp": "97455123456",
+      "email": "info@alwatan.qa",
+      "email2": "sales@alwatan.qa",
+      "addressEn": "Street 34, Industrial Area, Doha, Qatar",
+      "addressAr": "شارع 34، المنطقة الصناعية، الدوحة، قطر"
+    },
+    "seo": {
+      "siteTitleEn": "Al Watan Al Arabi Factory | مصنع الوطن العربي",
+      "siteTitleAr": "مصنع الوطن العربي | Al Watan Al Arabi Factory",
+      "siteDescEn": "Al Watan Al Arabi Factory - premium manufacturing of camping vehicles, aluminum fabrication, fiberglass products, water and fuel tanks, and luxury caravans.",
+      "siteDescAr": "مصنع الوطن العربي - تصنيع فاخر للمركبات التخييمية، أعمال ألفان، الجموس، GXR، الهايلكس، سيارات الكوفي، والكرفانات الفاخرة."
+    },
+    "requestFormConfig": {
+      "sections": [
+        {
+          "id": "sec-division-vehicle",
+          "stepKey": "division_vehicle",
+          "titleAr": "القسم والمركبة",
+          "titleEn": "Division & Vehicle",
+          "descriptionAr": "تحديد القسم المطلوب، نوع المركبة الأساسية، سنة الصنع وحالة التوفير.",
+          "descriptionEn": "Select the manufacturing division, base vehicle chassis, year, and supply status.",
+          "enabled": true,
+          "sortOrder": 1,
+          "appliesToCategories": [],
+          "builtInFields": [
+            {
+              "key": "category",
+              "labelAr": "القسم الهندسي المطلوب",
+              "labelEn": "Manufacturing Division",
+              "enabled": true
+            },
+            {
+              "key": "modelRef",
+              "labelAr": "الموديل المرجعي أو عنوان الطلب",
+              "labelEn": "Reference Model / Project Name",
+              "enabled": true
+            },
+            {
+              "key": "vehicleInfo",
+              "labelAr": "نوع المركبة / الشاصيه وسنة الصنع",
+              "labelEn": "Base Vehicle & Year",
+              "enabled": true
+            },
+            {
+              "key": "vehicleStatus",
+              "labelAr": "حالة توفير المركبة",
+              "labelEn": "Vehicle Supply Status",
+              "enabled": true
+            }
+          ],
+          "customFields": []
+        },
+        {
+          "id": "sec-body-dimensions",
+          "stepKey": "body_dimensions",
+          "titleAr": "الهيكل والأبعاد",
+          "titleEn": "Body & Dimensions",
+          "descriptionAr": "ارتفاع السقف ومستوى الشد، الأبعاد المطلوبة، مادة التصنيع والعزل الحراري.",
+          "descriptionEn": "Specify roof height profile, length & width, structural material, paint, and insulation.",
+          "enabled": true,
+          "sortOrder": 2,
+          "appliesToCategories": [],
+          "builtInFields": [
+            {
+              "key": "roofHeight",
+              "labelAr": "ارتفاع السقف ومستوى الشد",
+              "labelEn": "Roof Height / Canopy Profile",
+              "enabled": true
+            },
+            {
+              "key": "dimensions",
+              "labelAr": "الأبعاد (الطول والعرض بالمتر)",
+              "labelEn": "Body Length & Width (Meters)",
+              "enabled": true
+            },
+            {
+              "key": "materialAndPaint",
+              "labelAr": "مادة التصنيع والدهان الخارجي",
+              "labelEn": "Structural Material & Exterior Paint",
+              "enabled": true
+            },
+            {
+              "key": "insulation",
+              "labelAr": "مستوى العزل الحراري ومقاومة الغبار",
+              "labelEn": "Thermal & Dust Insulation Tier",
+              "enabled": true
+            }
+          ],
+          "customFields": []
+        },
+        {
+          "id": "sec-systems-gear",
+          "stepKey": "systems_gear",
+          "titleAr": "الأنظمة والتجهيزات",
+          "titleEn": "Systems & Equipment",
+          "descriptionAr": "سعات خزانات المياه والوقود، منظومة الطاقة الكهربائية، التكييف والتجهيزات الخاصة.",
+          "descriptionEn": "Configure water/fuel tanks, electrical & solar power, AC, and custom interior/exterior gear.",
+          "enabled": true,
+          "sortOrder": 3,
+          "appliesToCategories": [],
+          "builtInFields": [
+            {
+              "key": "waterTank",
+              "labelAr": "خزان الماء ومادته",
+              "labelEn": "Water Tank Capacity & Material",
+              "enabled": true
+            },
+            {
+              "key": "fuelTank",
+              "labelAr": "خزان وقود / ديزل إضافي",
+              "labelEn": "Auxiliary Fuel / Diesel Tank",
+              "enabled": true
+            },
+            {
+              "key": "powerSystem",
+              "labelAr": "منظومة الكهرباء والطاقة",
+              "labelEn": "Electrical & Solar Power",
+              "enabled": true
+            },
+            {
+              "key": "acSystem",
+              "labelAr": "التكييف والتهوية",
+              "labelEn": "Cooling & Ventilation",
+              "enabled": true
+            },
+            {
+              "key": "equipmentChecklist",
+              "labelAr": "التجهيزات والإضافات المخصصة",
+              "labelEn": "Custom Equipment Checklist",
+              "enabled": true
+            }
+          ],
+          "customFields": []
+        },
+        {
+          "id": "sec-contact-delivery",
+          "stepKey": "contact_delivery",
+          "titleAr": "المراجعة وبيانات العميل",
+          "titleEn": "Review & Contact Details",
+          "descriptionAr": "مراجعة ملخص المواصفات وتعبئة بيانات التواصل والتفاصيل الإضافية.",
+          "descriptionEn": "Review selected specifications and provide contact details and layout notes.",
+          "enabled": true,
+          "sortOrder": 4,
+          "appliesToCategories": [],
+          "builtInFields": [
+            {
+              "key": "summaryBox",
+              "labelAr": "ملخص المواصفات المختارة",
+              "labelEn": "Technical Configuration Summary",
+              "enabled": true
+            },
+            {
+              "key": "contactDetails",
+              "labelAr": "الاسم والهاتف والبريد الإلكتروني",
+              "labelEn": "Client Name, Phone & Email",
+              "enabled": true
+            },
+            {
+              "key": "locationPriority",
+              "labelAr": "الدولة والمدينة وأولوية التنفيذ",
+              "labelEn": "Country, City & Execution Priority",
+              "enabled": true
+            },
+            {
+              "key": "notes",
+              "labelAr": "ملاحظات هندسية وتفاصيل إضافية",
+              "labelEn": "Engineering & Custom Layout Notes",
+              "enabled": true
+            }
+          ],
+          "customFields": []
+        }
+      ],
+      "equipmentOptions": [
+        {
+          "key": "electric_awning",
+          "labelEn": "Electric Side Awning",
+          "labelAr": "مظلة جانبية كهربائية",
+          "enabled": true
+        },
+        {
+          "key": "heavy_drawers",
+          "labelEn": "Heavy-Duty Drawer System",
+          "labelAr": "أدراج تخزين ثقيلة",
+          "enabled": true
+        },
+        {
+          "key": "gas_kitchen",
+          "labelEn": "Integrated Gas & Kitchen",
+          "labelAr": "نظام غاز ومطبخ متكامل",
+          "enabled": true
+        },
+        {
+          "key": "bathroom_unit",
+          "labelEn": "Full Bathroom & Shower",
+          "labelAr": "حمام ودورة مياه متكاملة",
+          "enabled": true
+        },
+        {
+          "key": "vip_majlis",
+          "labelEn": "Luxury Interior Majlis",
+          "labelAr": "مجلس وجلسة داخلية فاخرة",
+          "enabled": true
+        },
+        {
+          "key": "horse_stalls",
+          "labelEn": "Horse Stalls & Hydraulic Ramp",
+          "labelAr": "فواصل نقل خيل ومنحدر هيدروليكي",
+          "enabled": true
+        },
+        {
+          "key": "coffee_counter",
+          "labelEn": "Stainless Coffee Bar Counter",
+          "labelAr": "كاونتر ستانلس لماكينة كوفي",
+          "enabled": true
+        },
+        {
+          "key": "roof_rack",
+          "labelEn": "Heavy-Duty Roof Rack",
+          "labelAr": "عرشة سقفية وحامل إضافي",
+          "enabled": true
+        },
+        {
+          "key": "rear_ladder",
+          "labelEn": "Rear Ladder & Reinforced Bumper",
+          "labelAr": "سلم خلفي وصدام تدعيم",
+          "enabled": true
+        },
+        {
+          "key": "led_package",
+          "labelEn": "360° Exterior & Interior LED",
+          "labelAr": "إضاءة LED محيطية وداخلية",
+          "enabled": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Al Watan Al Arabi Factory",
+  "description": "Precision manufacturing of luxury caravans, aluminum canopies, fiberglass structures, expedition water and fuel tanks, and executive operations portal for Qatar and the GCC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
