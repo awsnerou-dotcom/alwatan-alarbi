@@ -41,6 +41,12 @@ async function loadDb(): Promise<DatabaseState> {
         await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(state)).run();
       }
     }
+    // One-time fix: replace the placeholder WhatsApp number with the real one.
+    const contact = (state as any).settings?.contact;
+    if (contact && contact.whatsapp === '97455123456') {
+      contact.whatsapp = '97455598944';
+      await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(state)).run();
+    }
     return state;
   }
   const initial = seedDb as unknown as DatabaseState;

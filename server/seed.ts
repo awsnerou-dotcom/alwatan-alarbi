@@ -1015,7 +1015,7 @@ export function createInitialSeed(): DatabaseState {
       contact: {
         phone: '+974 55 123 456',
         phone2: '+974 44 601 820',
-        whatsapp: '97455123456',
+        whatsapp: '97455598944',
         email: 'info@alwatan.qa',
         email2: 'sales@alwatan.qa',
         addressEn: 'Street 34, Industrial Area, Doha, Qatar',

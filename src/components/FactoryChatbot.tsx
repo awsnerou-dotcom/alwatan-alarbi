@@ -122,7 +122,7 @@ export function FactoryChatbot() {
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   const logoSrc = settings?.hero.logoUrl || '/logo.jpeg';
-  const whatsappNum = settings?.contact.whatsapp || '97455123456';
+  const whatsappNum = settings?.contact.whatsapp || '97455598944';
   const whatsappUrl = `https://wa.me/${whatsappNum}?text=${encodeURIComponent(
     pick('Hello Al Watan Al Arabi Factory', 'مرحباً مصنع الوطن العربي'),
   )}`;

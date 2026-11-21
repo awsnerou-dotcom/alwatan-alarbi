@@ -158,7 +158,7 @@ export function ProjectDetailPage() {
                   {t('projects.requestSimilar')}
                 </button>
                 <a
-                  href={`https://wa.me/${settings?.contact.whatsapp || '97455123456'}?text=${encodeURIComponent(
+                  href={`https://wa.me/${settings?.contact.whatsapp || '97455598944'}?text=${encodeURIComponent(
                     pick(
                       `Hello Al Watan Al Arabi, I would like to inquire about: ${project.titleEn}`,
                       `مرحباً مصنع الوطن العربي، أود الاستفسار عن مشروع: ${project.titleAr}`,

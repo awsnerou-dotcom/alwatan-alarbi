@@ -29,7 +29,7 @@ export function PortfolioCategoryPage() {
     .filter((p) => p.categorySlug === categorySlug)
     .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0));
 
-  const whatsappNum = settings?.contact.whatsapp || '97455123456';
+  const whatsappNum = settings?.contact.whatsapp || '97455598944';
 
   if (loading) {
     return (

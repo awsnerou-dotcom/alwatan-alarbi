@@ -200,7 +200,7 @@ export function QuoteEstimatorDrawer() {
     }
 
     lines.push(`${pick('Client', 'العميل')}: ${customerName} (${phone})`);
-    return `https://wa.me/${settings?.contact.whatsapp || '97455123456'}?text=${encodeURIComponent(lines.join('\n'))}`;
+    return `https://wa.me/${settings?.contact.whatsapp || '97455598944'}?text=${encodeURIComponent(lines.join('\n'))}`;
   }
 
   async function handleSubmit(e: React.FormEvent) {

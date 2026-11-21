@@ -6,7 +6,7 @@ import { useSite } from '../context/SiteContext';
 export function WhatsAppFloating() {
   const { pick } = useI18n();
   const { settings } = useSite();
-  const phone = settings?.contact.whatsapp || '97455123456';
+  const phone = settings?.contact.whatsapp || '97455598944';
   const greeting = pick('Hello Al Watan Al Arabi Factory', 'مرحباً مصنع الوطن العربي');
   const href = `https://wa.me/${phone}?text=${encodeURIComponent(greeting)}`;
 
