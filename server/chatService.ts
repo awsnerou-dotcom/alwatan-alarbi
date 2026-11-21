@@ -224,7 +224,9 @@ export async function generateFactoryChatReply(
   }
 
   const mapped = extractGeminiError(lastError);
-  const finalError = new Error(mapped.message) as Error & { statusCode?: number };
+  console.error('Gemini chat failed:', lastError instanceof Error ? lastError.message : String(lastError));
+  const rawDetail = (lastError instanceof Error ? lastError.message : String(lastError)).replace(/AIza[0-9A-Za-z_-]+/g, '[key]').slice(0, 300); // TEMP-DEBUG
+  const finalError = new Error(`${mapped.message} [${rawDetail}]`) as Error & { statusCode?: number }; // TEMP-DEBUG
   finalError.statusCode = mapped.status;
   throw finalError;
 }
