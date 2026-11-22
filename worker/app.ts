@@ -1,5 +1,6 @@
 import { createApp, type Request_ as Req, type Response_ as Res, type Next } from './mini-express.ts';
 import crypto from 'node:crypto';
+import { AsyncLocalStorage } from 'node:async_hooks';
 import { env as cfEnv } from 'cloudflare:workers';
 import seedDb from '../data/db.json';
 import { generateFactoryChatReply, type ChatTurnInput } from '../server/chatService.ts';
@@ -23,22 +24,43 @@ interface Bindings {
 }
 const bindings = () => cfEnv as unknown as Bindings;
 
-let cache: DatabaseState | null = null;
-let dirty = false;
+// Each request gets its own copy of the database (AsyncLocalStorage). A single
+// module-level copy was shared by overlapping requests in the same isolate, so
+// concurrent saves overwrote each other and admin edits were silently lost.
+interface RequestState {
+  db: DatabaseState | null;
+  raw: string | null; // the exact JSON text this request loaded, for the conditional write
+  dirty: boolean;
+}
+const requestState = new AsyncLocalStorage<RequestState>();
 
-async function loadDb(): Promise<DatabaseState> {
+function state(): RequestState {
+  const s = requestState.getStore();
+  if (!s) throw new Error('No request context');
+  return s;
+}
+
+class ConflictError extends Error {}
+
+async function saveRaw(next: string): Promise<void> {
+  const { DB } = bindings();
+  await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', next).run();
+}
+
+async function loadDb(): Promise<{ db: DatabaseState; raw: string }> {
   const { DB } = bindings();
   await DB.exec('CREATE TABLE IF NOT EXISTS app_state (k TEXT PRIMARY KEY, v TEXT NOT NULL)');
   const row = await DB.prepare('SELECT v FROM app_state WHERE k = ?').bind('db').first<{ v: string }>();
   if (row?.v) {
     const state = JSON.parse(row.v) as DatabaseState;
+    let changed = false;
     // Keep the main admin's email in sync with the ADMIN_EMAIL secret.
     const want = adminEmail();
     if (!state.users.some((u) => u.email.toLowerCase() === want)) {
       const admin = state.users.find((u) => u.role === 'super_admin');
       if (admin) {
         admin.email = want;
-        await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(state)).run();
+        changed = true;
       }
     }
     // One-time fix: replace the placeholder WhatsApp number with the real one.
@@ -49,29 +71,42 @@ async function loadDb(): Promise<DatabaseState> {
       contact.phone2 = '';
       contact.email = '';
       contact.email2 = '';
-      await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(state)).run();
+      changed = true;
     }
-    return state;
+    if (!changed) return { db: state, raw: row.v };
+    const raw = JSON.stringify(state);
+    await saveRaw(raw);
+    return { db: state, raw };
   }
-  const initial = seedDb as unknown as DatabaseState;
-  await DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(initial)).run();
-  return JSON.parse(JSON.stringify(initial)) as DatabaseState;
+  const raw = JSON.stringify(seedDb);
+  await saveRaw(raw);
+  return { db: JSON.parse(raw) as DatabaseState, raw };
 }
 
 async function persistDb(): Promise<void> {
-  if (!dirty || !cache) return;
-  dirty = false;
-  await bindings().DB.prepare('INSERT OR REPLACE INTO app_state (k, v) VALUES (?, ?)').bind('db', JSON.stringify(cache)).run();
+  const s = requestState.getStore();
+  if (!s || !s.dirty || !s.db) return;
+  s.dirty = false;
+  const next = JSON.stringify(s.db);
+  // Only write if nobody else saved since this request loaded the data.
+  const result = await bindings()
+    .DB.prepare('UPDATE app_state SET v = ? WHERE k = ? AND v = ?')
+    .bind(next, 'db', s.raw ?? '')
+    .run();
+  if (!result.meta.changes) throw new ConflictError('Data changed during the request');
+  s.raw = next;
 }
 
 function readDb(): DatabaseState {
-  if (!cache) throw new Error('Database not loaded');
-  return cache;
+  const s = state();
+  if (!s.db) throw new Error('Database not loaded');
+  return s.db;
 }
 
 function writeDb(db: DatabaseState): void {
-  cache = db;
-  dirty = true;
+  const s = state();
+  s.db = db;
+  s.dirty = true;
 }
 
 function sanitizeUser(u: DatabaseState['users'][number]): UserRecord {
@@ -146,14 +181,44 @@ function requireAuth(
   next();
 }
 
+// Saves inside one isolate run one at a time; a save that still collides with
+// another isolate's save is retried on fresh data instead of overwriting it.
+let writeQueue: Promise<unknown> = Promise.resolve();
+
+export function buildHandler() {
+  const app = buildApp();
+  const run = (request: Request) => requestState.run({ db: null, raw: null, dirty: false }, () => app.fetch(request));
+  return async (request: Request): Promise<Response> => {
+    const path = new URL(request.url).pathname;
+    // Reads, and writes that never touch the database (chat, media upload), skip the queue.
+    if (['GET', 'HEAD', 'OPTIONS'].includes(request.method) || path === '/api/chat' || path === '/api/admin/upload') {
+      return run(request);
+    }
+    const attempt = async () => {
+      let res: Response | null = null;
+      for (let i = 0; i < 4; i++) {
+        res = await run(request.clone());
+        if (res.status !== 409 || res.headers.get('x-retry') !== '1') return res;
+      }
+      return Response.json({ error: 'تعذر الحفظ بسبب تعديل متزامن، يرجى المحاولة مرة أخرى.' }, { status: 409 });
+    };
+    const p = writeQueue.then(attempt, attempt);
+    writeQueue = p.catch(() => undefined);
+    return p;
+  };
+}
+
 export function buildApp() {
   const app = createApp();
 
   // Load the database before each request and persist it before the response ends.
   app.use(['/api'], async (_req, res, next) => {
     try {
-      cache = await loadDb();
-      dirty = false;
+      const loaded = await loadDb();
+      const s = state();
+      s.db = loaded.db;
+      s.raw = loaded.raw;
+      s.dirty = false;
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: 'Database unavailable' });
@@ -161,7 +226,20 @@ export function buildApp() {
     }
     next();
   });
-  app.afterResponse(persistDb);
+  app.afterResponse(async () => {
+    try {
+      await persistDb();
+    } catch (err) {
+      if (err instanceof ConflictError) {
+        return new Response(JSON.stringify({ error: err.message }), {
+          status: 409,
+          headers: { 'Content-Type': 'application/json', 'x-retry': '1' },
+        });
+      }
+      console.error(err);
+      return Response.json({ error: 'تعذر حفظ البيانات.' }, { status: 500 });
+    }
+  });
 
   // Uploaded media (stored in KV)
   app.get('/uploads/:name', async (req: Req, res: Res) => {

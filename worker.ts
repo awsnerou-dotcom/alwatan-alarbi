@@ -1,7 +1,7 @@
-import { buildApp } from './worker/app.ts';
+import { buildHandler } from './worker/app.ts';
 
-const app = buildApp();
+const handle = buildHandler();
 
 export default {
-  fetch: (request: Request) => app.fetch(request),
+  fetch: (request: Request) => handle(request),
 };

@@ -58,7 +58,7 @@ function compile(path: string) {
 
 export function createApp() {
   const routes: Route[] = [];
-  const hooks: Array<() => Promise<void>> = [];
+  const hooks: Array<() => Promise<Response | void>> = [];
   const add = (method: string) => (path: string, ...handlers: Handler[]) => {
     routes.push({ method, ...compile(path), handlers });
   };
@@ -70,7 +70,7 @@ export function createApp() {
     use(prefix: string | string[], ...handlers: Handler[]) {
       for (const p of Array.isArray(prefix) ? prefix : [prefix]) routes.push({ method: null, prefix: p, keys: [], handlers });
     },
-    afterResponse(fn: () => Promise<void>) {
+    afterResponse(fn: () => Promise<Response | void>) {
       hooks.push(fn);
     },
     async fetch(request: Request): Promise<Response> {
@@ -124,7 +124,11 @@ export function createApp() {
       };
       next();
       await res.done;
-      for (const h of hooks) await h();
+      // A hook may replace the response (e.g. when saving the data failed).
+      for (const h of hooks) {
+        const override = await h();
+        if (override) return override;
+      }
       return res.toResponse();
     },
   };
