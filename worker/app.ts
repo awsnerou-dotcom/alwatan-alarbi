@@ -175,6 +175,23 @@ export function buildApp() {
     res.end(new Uint8Array(value as ArrayBuffer));
   });
 
+  // TEMP-DEBUG: booleans only, no secret values
+  app.get('/api/auth/diag', (_req, res) => {
+    const v = cfEnv as unknown as Record<string, string | undefined>;
+    const want = String(v.ADMIN_EMAIL || '').trim().toLowerCase();
+    const db = readDb();
+    res.json({
+      hasAdminEmail: !!want,
+      adminEmailHasSpaces: (v.ADMIN_EMAIL || '') !== (v.ADMIN_EMAIL || '').trim(),
+      hasAdminPassword: !!v.ADMIN_PASSWORD,
+      adminPasswordLength: (v.ADMIN_PASSWORD || '').length,
+      adminPasswordHasEdgeSpaces: (v.ADMIN_PASSWORD || '') !== (v.ADMIN_PASSWORD || '').trim(),
+      hasAuthSecret: (v.AUTH_SECRET || '').trim().length >= 16,
+      userWithAdminEmailExists: db.users.some((u) => u.email.toLowerCase() === want),
+      superAdmins: db.users.filter((u) => u.role === 'super_admin').map((u) => ({ email: u.email, status: u.status })),
+    });
+  });
+
   // Health
   app.get('/api/health', (_req, res) => {
     res.json({ ok: true, timestamp: new Date().toISOString() });
