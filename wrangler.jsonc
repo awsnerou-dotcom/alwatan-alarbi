@@ -3,6 +3,7 @@
   "name": "alwatan-alarbi",
   "main": "worker.ts",
   "build": { "command": "npm run build" },
+  "keep_vars": true,
   "compatibility_date": "2025-10-01",
   "compatibility_flags": ["nodejs_compat", "nodejs_compat_populate_process_env"],
   "assets": {
