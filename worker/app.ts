@@ -4,7 +4,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 import seedDb from '../data/db.json';
 import { generateFactoryChatReply, type ChatTurnInput } from '../server/chatService.ts';
 import { normalizeRequestFormConfig } from '../src/shared/requestRequirements.ts';
-import { hashPassword, verifyLogin, tokenSecret } from './passwords.ts';
+import { hashPassword, verifyLogin, tokenSecret, adminEmail, missingAuthSecrets } from './passwords.ts';
 import type {
   Category,
   DatabaseState,
@@ -33,8 +33,8 @@ async function loadDb(): Promise<DatabaseState> {
   if (row?.v) {
     const state = JSON.parse(row.v) as DatabaseState;
     // Keep the main admin's email in sync with the ADMIN_EMAIL secret.
-    const want = String((cfEnv as unknown as Record<string, string | undefined>).ADMIN_EMAIL || '').trim().toLowerCase();
-    if (want && !state.users.some((u) => u.email.toLowerCase() === want)) {
+    const want = adminEmail();
+    if (!state.users.some((u) => u.email.toLowerCase() === want)) {
       const admin = state.users.find((u) => u.role === 'super_admin');
       if (admin) {
         admin.email = want;
@@ -177,7 +177,8 @@ export function buildApp() {
 
   // Health
   app.get('/api/health', (_req, res) => {
-    res.json({ ok: true, timestamp: new Date().toISOString() });
+    const missing = missingAuthSecrets();
+    res.json({ ok: true, timestamp: new Date().toISOString(), authConfigured: missing.length === 0, missingSecrets: missing });
   });
 
   // Auth routes
@@ -186,6 +187,13 @@ export function buildApp() {
     const password = String(req.body?.password || '');
     if (!email || !password) {
       res.status(400).json({ error: 'يرجى إدخال البريد الإلكتروني وكلمة المرور.' });
+      return;
+    }
+    const missing = missingAuthSecrets();
+    if (missing.length) {
+      res.status(503).json({
+        error: `تسجيل الدخول غير مفعّل: أضف في Cloudflare (Settings ← Variables and Secrets) القيم التالية: ${missing.join('، ')}`,
+      });
       return;
     }
     const db = readDb();

@@ -24,12 +24,31 @@ function safeEqual(a: string, b: string): boolean {
   return x.length === y.length && crypto.timingSafeEqual(x, y);
 }
 
+// Main admin email: the ADMIN_EMAIL secret, or the documented default.
+export function adminEmail(): string {
+  return (vars().ADMIN_EMAIL || '').trim().toLowerCase() || 'admin@alwatan.qa';
+}
+
+// Secrets pasted into the Cloudflare dashboard often pick up stray spaces/newlines.
+export function adminPassword(): string {
+  return (vars().ADMIN_PASSWORD || '').trim();
+}
+
+// Which required secrets are missing (names only, never values).
+export function missingAuthSecrets(): string[] {
+  const missing: string[] = [];
+  const secret = vars().AUTH_SECRET?.trim();
+  if (!secret || secret.length < 16) missing.push('AUTH_SECRET');
+  if (!adminPassword()) missing.push('ADMIN_PASSWORD');
+  return missing;
+}
+
 export function verifyLogin(user: { email: string; passwordHash: string; salt: string }, password: string): boolean {
-  const adminEmail = (vars().ADMIN_EMAIL || '').trim().toLowerCase();
-  const adminPassword = vars().ADMIN_PASSWORD || '';
+  const email = adminEmail();
+  const adminPw = adminPassword();
   // The main admin always signs in with the ADMIN_PASSWORD secret (change it in Cloudflare to rotate it).
-  if (adminPassword && adminEmail && user.email.toLowerCase() === adminEmail) {
-    return safeEqual(password, adminPassword);
+  if (adminPw && user.email.toLowerCase() === email) {
+    return safeEqual(password.trim(), adminPw);
   }
   // Legacy scrypt hashes (128 hex chars) can't be checked cheaply on the free plan.
   if (user.passwordHash.length !== 64) return false;
